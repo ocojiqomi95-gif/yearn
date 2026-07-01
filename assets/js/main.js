@@ -12,6 +12,16 @@
   const navbar  = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+  const desktopBreakpoint = 992;
+
+  function closeMobileMenu() {
+    if (!hamburger || !mobileMenu) return;
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
   // Scroll state
   function onScroll() {
@@ -27,10 +37,23 @@
 
   // Mobile menu toggle
   if (hamburger && mobileMenu) {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+
     hamburger.addEventListener('click', function () {
       const isOpen = hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
       document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= desktopBreakpoint) closeMobileMenu();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMobileMenu();
     });
   }
 
@@ -38,9 +61,7 @@
   if (mobileMenu) {
     mobileMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        hamburger && hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
+        closeMobileMenu();
       });
     });
   }
@@ -94,6 +115,14 @@
      FAQ ACCORDION
      ===================== */
   document.querySelectorAll('.faq-question').forEach(function (btn) {
+    const item = btn.closest('.faq-item');
+    const answerRegion = item ? item.querySelector('.faq-answer') : null;
+    if (answerRegion) {
+      if (!answerRegion.id) answerRegion.id = 'faq-answer-' + Math.random().toString(36).slice(2, 10);
+      btn.setAttribute('aria-controls', answerRegion.id);
+    }
+    btn.setAttribute('aria-expanded', 'false');
+
     btn.addEventListener('click', function () {
       const item = btn.closest('.faq-item');
       if (!item) return;
@@ -105,7 +134,8 @@
         openItem.classList.remove('open');
         const answer = openItem.querySelector('.faq-answer-inner');
         if (answer) answer.style.paddingTop = '';
-        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        const openBtn = openItem.querySelector('.faq-question');
+        if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
       });
 
       // Toggle clicked
