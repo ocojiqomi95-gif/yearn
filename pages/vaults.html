@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaults — Yearn Finance</title>
+  <meta name="description" content="Explore all Yearn Finance vaults — earn optimized yields on ETH, USDC, crvUSD, USDS and more through battle-tested DeFi strategies." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .vault-full-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.25s;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .vault-full-card:hover { border-color: var(--accent-blue); background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow-card); }
+    .vault-token-lg {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--gradient-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 900; color: #fff;
+      flex-shrink: 0; border: 2px solid var(--border-light);
+      text-align: center; line-height: 1;
+    }
+    .vault-meta { flex: 1; }
+    .vault-meta h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .vault-meta p { font-size: 0.875rem; }
+    .vault-right { text-align: right; flex-shrink: 0; }
+    .vault-apy-big { font-size: 1.6rem; font-weight: 800; color: #10b981; }
+    .vault-apy-label-sm { font-size: 0.75rem; color: var(--text-muted); }
+    .filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-tab {
+      padding: 8px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 600;
+      border: 1px solid var(--border); background: transparent; color: var(--text-secondary);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-tab:hover, .filter-tab.active { background: var(--accent-blue-glow); border-color: var(--accent-blue); color: var(--accent-blue-light); }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-logo" aria-label="Yearn Finance Home">
+      <div class="logo-icon">Y</div>Yearn
+    </a>
+    <ul class="navbar-nav" role="list">
+      <li class="nav-item">
+        <a href="ecosystem.html" class="nav-link">Ecosystem
+          <svg class="chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="ecosystem.html#products" class="dropdown-item"><div class="dropdown-item-icon">🏦</div><div class="dropdown-item-text"><span class="dropdown-item-title">Products</span><span class="dropdown-item-desc">yVaults, yCRV, yYB, stYFI</span></div></a>
+          <a href="ecosystem.html#tools" class="dropdown-item"><div class="dropdown-item-icon">🔧</div><div class="dropdown-item-text"><span class="dropdown-item-title">Tools</span><span class="dropdown-item-desc">PowerGlove, Kong, Kalani</span></div></a>
+          <div class="dropdown-divider"></div>
+          <a href="vaults.html" class="dropdown-item"><div class="dropdown-item-icon">💎</div><div class="dropdown-item-text"><span class="dropdown-item-title">Vaults</span><span class="dropdown-item-desc">Best risk-adjusted yields</span></div></a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+      <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="expedition.html" class="nav-link">Expedition</a></li>
+      <li class="nav-item">
+        <a href="resources.html" class="nav-link">Resources
+          <svg class="chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div class="dropdown-item-icon">📚</div><div class="dropdown-item-text"><span class="dropdown-item-title">GitBook Docs</span><span class="dropdown-item-desc">Yearn Knowledge Base</span></div></a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div class="dropdown-item-icon">💻</div><div class="dropdown-item-text"><span class="dropdown-item-title">GitHub</span><span class="dropdown-item-desc">Yearn Codebase</span></div></a>
+          <div class="dropdown-divider"></div>
+          <a href="resources.html" class="dropdown-item"><div class="dropdown-item-icon">🔗</div><div class="dropdown-item-text"><span class="dropdown-item-title">All Resources</span><span class="dropdown-item-desc">Community &amp; support links</span></div></a>
+        </div>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="contacts.html" class="btn btn-secondary btn-sm">Contact</a>
+      <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch App ↗</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Navigation</div>
+    <a href="ecosystem.html" class="mobile-nav-link">🌐 Ecosystem</a>
+    <a href="features.html" class="mobile-nav-link">⚡ Features</a>
+    <a href="products.html" class="mobile-nav-link">📦 Products</a>
+    <a href="services.html" class="mobile-nav-link">🛠 Services</a>
+    <a href="expedition.html" class="mobile-nav-link">🚀 Expedition</a>
+    <a href="vaults.html" class="mobile-nav-link">💎 Vaults</a>
+    <a href="resources.html" class="mobile-nav-link">🔗 Resources</a>
+    <a href="contacts.html" class="mobile-nav-link">📬 Contacts</a>
+  </div>
+  <div class="mobile-menu-section">
+    <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Launch App ↗</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span> <span>Vaults</span>
+    </nav>
+    <span class="section-label">💎 Vaults</span>
+    <h1 style="margin-top:16px;">Yield<br/><span class="gradient-text">Vaults</span></h1>
+    <p>Vaults utilize DeFi opportunities to give you the best risk-adjusted yields. Deposit once, earn continuously.</p>
+  </div>
+</section>
+
+<!-- VAULT STATS -->
+<section class="section-sm" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-card">
+        <div class="stat-value gradient-text" data-count="580" data-suffix="M+">$580M+</div>
+        <div class="stat-label">Total Value Locked</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value gradient-text" data-count="250" data-suffix="+">250+</div>
+        <div class="stat-label">Active Strategies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value gradient-text" data-count="48" data-suffix="+">48+</div>
+        <div class="stat-label">Active Vaults</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value gradient-text">5</div>
+        <div class="stat-label">Supported Chains</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAULT LIST -->
+<section class="section">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px;">
+      <h2 style="margin:0;">Top Vaults <span class="section-label" style="margin:0 0 0 12px;font-size:0.7rem;">View All →</span></h2>
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open Live App ↗</a>
+    </div>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="stablecoin">Stablecoins</button>
+      <button class="filter-tab" data-filter="eth">ETH</button>
+      <button class="filter-tab" data-filter="btc">BTC</button>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px;" id="vaultList">
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="eth" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg">ETH</div>
+        <div class="vault-meta">
+          <h3>Earn up to 2.83% on ETH</h3>
+          <p>Multi-strategy ETH vault: Aave, Compound, and Curve-based strategies. Auto-compounding staking rewards.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Multi-Strategy</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">2.83%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $120M+</div>
+        </div>
+      </a>
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="stablecoin" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg">USDS</div>
+        <div class="vault-meta">
+          <h3>Earn up to 3.29% on USDS</h3>
+          <p>Optimized USDS lending vault across multiple lending markets including Morpho, Aave v3, and Sky protocol.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Lending Curation</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">3.29%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $85M+</div>
+        </div>
+      </a>
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="stablecoin" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg">USDC</div>
+        <div class="vault-meta">
+          <h3>Earn up to 3.38% on USDC</h3>
+          <p>Top-performing USDC vault leveraging optimized lending rates across Aave, Compound, and Morpho Blue for maximum stablecoin yield.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Optimized Lending</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">3.38%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $200M+</div>
+        </div>
+      </a>
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="stablecoin" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg" style="font-size:0.65rem;">crvUSD</div>
+        <div class="vault-meta">
+          <h3>Earn up to 2.49% on crvUSD</h3>
+          <p>Curve-native stablecoin vault using Curve lending markets and yield optimization strategies to maximize crvUSD returns.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Curve Strategy</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">2.49%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $45M+</div>
+        </div>
+      </a>
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="btc" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg">WBTC</div>
+        <div class="vault-meta">
+          <h3>WBTC Vault</h3>
+          <p>Wrapped Bitcoin yield vault deploying across BTC-denominated lending strategies and Curve pools to generate BTC-native returns.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Multi-Strategy</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">1.92%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $65M+</div>
+        </div>
+      </a>
+
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="vault-full-card" data-type="stablecoin" style="text-decoration:none;color:inherit;">
+        <div class="vault-token-lg">DAI</div>
+        <div class="vault-meta">
+          <h3>DAI Vault</h3>
+          <p>Battle-tested DAI vault with a long track record of consistent stablecoin yields across MakerDAO, Aave, and Curve-based strategies.</p>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Lending + Curve</span>
+            <span class="badge badge-green">V3</span>
+          </div>
+        </div>
+        <div class="vault-right">
+          <div class="vault-apy-big">3.15%</div>
+          <div class="vault-apy-label-sm">APY</div>
+          <div style="margin-top:8px;font-size:0.75rem;color:var(--text-muted);">TVL: $35M+</div>
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align:center;margin-top:40px;padding:24px;background:var(--bg-card);border:1px dashed var(--border);border-radius:var(--radius-lg);">
+      <p style="margin-bottom:16px;">Viewing 6 of 48+ available vaults</p>
+      <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">View All Vaults in App ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO DEPOSIT -->
+<section class="section" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">📖 How It Works</span>
+      <h2>Depositing in<br/><span class="gradient-text">3 Simple Steps</span></h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:16px;">🔗</div>
+        <h3>1. Connect Wallet</h3>
+        <p>Connect your Ethereum wallet (MetaMask, Coinbase Wallet, WalletConnect) to the Yearn app at app.yearn.fi.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:16px;">💎</div>
+        <h3>2. Choose a Vault</h3>
+        <p>Browse available vaults, review APY, TVL, and strategy details. Select the vault matching your preferred asset and risk profile.</p>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:16px;">📈</div>
+        <h3>3. Deposit &amp; Earn</h3>
+        <p>Approve the token, enter your deposit amount, and confirm the transaction. Your funds start earning immediately. Withdraw any time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <span class="section-label">🚀 Start Earning</span>
+      <h2>Ready to Put Your<br/>Crypto to Work?</h2>
+      <p>Thousands of users are already earning optimized yields with Yearn. Join them — no minimum deposit, no lock-up period.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Open All Vaults ↗</a>
+        <a href="https://docs.yearn.fi/getting-started/products/yvaults/overview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Vault Documentation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="navbar-logo" style="display:inline-flex;"><div class="logo-icon">Y</div>Yearn</a>
+        <p>DeFi's premier yield optimization protocol. Earn the best risk-adjusted yields across the decentralized finance ecosystem.</p>
+        <div class="footer-socials" style="margin-top:20px;">
+          <a href="https://twitter.com/iearnfinance" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X / Twitter">𝕏</a>
+          <a href="https://discord.gg/6PNv2nF" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">💬</a>
+          <a href="https://t.me/yearnfinance" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">✈️</a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">🐙</a>
+          <a href="https://gov.yearn.fi" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Governance">🗳️</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Protocol</div>
+        <div class="footer-links">
+          <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Launch App ↗</a>
+          <a href="vaults.html" class="footer-link">Vaults</a>
+          <a href="ecosystem.html" class="footer-link">Ecosystem</a>
+          <a href="features.html" class="footer-link">Features</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="services.html" class="footer-link">Services</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <div class="footer-links">
+          <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Documentation ↗</a>
+          <a href="https://blog.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Blog ↗</a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub ↗</a>
+          <a href="resources.html" class="footer-link">All Resources</a>
+          <a href="expedition.html" class="footer-link">Expedition</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Community</div>
+        <div class="footer-links">
+          <a href="https://discord.gg/6PNv2nF" target="_blank" rel="noopener noreferrer" class="footer-link">Discord Support ↗</a>
+          <a href="https://t.me/yearnfinance" target="_blank" rel="noopener noreferrer" class="footer-link">Telegram ↗</a>
+          <a href="https://twitter.com/iearnfinance" target="_blank" rel="noopener noreferrer" class="footer-link">X (Twitter) ↗</a>
+          <a href="https://gov.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Discourse Forum ↗</a>
+          <a href="contacts.html" class="footer-link">Contacts</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2024 Yearn Finance. All rights reserved.</div>
+      <div style="display:flex;gap:24px;">
+        <a href="https://docs.yearn.fi/resources/risks/protocol-risks" target="_blank" rel="noopener noreferrer" class="footer-bottom-text" style="color:var(--text-muted);">Risk Disclosure</a>
+        <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-bottom-text" style="color:var(--text-muted);">Docs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+<script>
+  // Vault filter tabs
+  document.querySelectorAll('.filter-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.filter-tab').forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var filter = tab.dataset.filter;
+      document.querySelectorAll('#vaultList .vault-full-card').forEach(function(card) {
+        if (filter === 'all' || card.dataset.type === filter) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
