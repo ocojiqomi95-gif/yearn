@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecosystem — Yearn Finance</title>
+  <meta name="description" content="Explore the Yearn Finance ecosystem: yVaults, yCRV, yYB, stYFI, PowerGlove, Kong, Kalani, yFactory, and APR Oracle." />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-logo" aria-label="Yearn Finance Home">
+      <div class="logo-icon">Y</div>Yearn
+    </a>
+    <ul class="navbar-nav" role="list">
+      <li class="nav-item">
+        <a href="ecosystem.html" class="nav-link active">Ecosystem
+          <svg class="chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="#products" class="dropdown-item"><div class="dropdown-item-icon">🏦</div><div class="dropdown-item-text"><span class="dropdown-item-title">Products</span><span class="dropdown-item-desc">yVaults, yCRV, yYB, stYFI</span></div></a>
+          <a href="#tools" class="dropdown-item"><div class="dropdown-item-icon">🔧</div><div class="dropdown-item-text"><span class="dropdown-item-title">Tools</span><span class="dropdown-item-desc">PowerGlove, Kong, Kalani</span></div></a>
+          <div class="dropdown-divider"></div>
+          <a href="vaults.html" class="dropdown-item"><div class="dropdown-item-icon">💎</div><div class="dropdown-item-text"><span class="dropdown-item-title">Vaults</span><span class="dropdown-item-desc">Best risk-adjusted yields</span></div></a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="features.html" class="nav-link">Features</a></li>
+      <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+      <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+      <li class="nav-item"><a href="expedition.html" class="nav-link">Expedition</a></li>
+      <li class="nav-item">
+        <a href="resources.html" class="nav-link">Resources
+          <svg class="chevron" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="dropdown" role="menu">
+          <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div class="dropdown-item-icon">📚</div><div class="dropdown-item-text"><span class="dropdown-item-title">GitBook Docs</span><span class="dropdown-item-desc">Yearn Knowledge Base</span></div></a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div class="dropdown-item-icon">💻</div><div class="dropdown-item-text"><span class="dropdown-item-title">GitHub</span><span class="dropdown-item-desc">Yearn Codebase</span></div></a>
+          <a href="https://blog.yearn.fi" target="_blank" rel="noopener noreferrer" class="dropdown-item"><div class="dropdown-item-icon">✍️</div><div class="dropdown-item-text"><span class="dropdown-item-title">Blog</span><span class="dropdown-item-desc">Articles about Yearn</span></div></a>
+          <div class="dropdown-divider"></div>
+          <a href="resources.html" class="dropdown-item"><div class="dropdown-item-icon">🔗</div><div class="dropdown-item-text"><span class="dropdown-item-title">All Resources</span><span class="dropdown-item-desc">Community &amp; support links</span></div></a>
+        </div>
+      </li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="contacts.html" class="btn btn-secondary btn-sm">Contact</a>
+      <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Launch App ↗</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Navigation</div>
+    <a href="ecosystem.html" class="mobile-nav-link">🌐 Ecosystem</a>
+    <a href="features.html" class="mobile-nav-link">⚡ Features</a>
+    <a href="products.html" class="mobile-nav-link">📦 Products</a>
+    <a href="services.html" class="mobile-nav-link">🛠 Services</a>
+    <a href="expedition.html" class="mobile-nav-link">🚀 Expedition</a>
+    <a href="vaults.html" class="mobile-nav-link">💎 Vaults</a>
+    <a href="resources.html" class="mobile-nav-link">🔗 Resources</a>
+    <a href="contacts.html" class="mobile-nav-link">📬 Contacts</a>
+  </div>
+  <div class="mobile-menu-section">
+    <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;justify-content:center;">Launch App ↗</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> <span>›</span> <span>Ecosystem</span>
+    </nav>
+    <span class="section-label">🌐 Ecosystem</span>
+    <h1 style="margin-top:16px;">The Yearn<br/><span class="gradient-text">Ecosystem</span></h1>
+    <p>A comprehensive suite of DeFi products and tools built to maximize yield generation, enhance governance participation, and empower builders across the decentralized finance landscape.</p>
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="section-sm" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+      <a href="#products" class="btn btn-secondary btn-sm">🏦 Products</a>
+      <a href="#yvaults" class="btn btn-secondary btn-sm">📊 yVaults</a>
+      <a href="#curation" class="btn btn-secondary btn-sm">🎯 Curation</a>
+      <a href="#liquid-lockers" class="btn btn-secondary btn-sm">🔓 Liquid Lockers</a>
+      <a href="#styfi" class="btn btn-secondary btn-sm">💎 stYFI</a>
+      <a href="#tools" class="btn btn-secondary btn-sm">🔧 Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">📦 Products</span>
+      <h2>Yield-Generating<br/><span class="gradient-text">Products</span></h2>
+      <p>Core Yearn products for maximizing yield from your crypto assets across multiple DeFi protocols.</p>
+    </div>
+
+    <!-- yVaults -->
+    <div id="yvaults" style="scroll-margin-top:90px;">
+      <div class="product-section">
+        <div class="product-section-title">yVaults — Yield-Generating Vaults</div>
+        <div class="product-card" style="margin-bottom:24px;">
+          <div class="product-icon">🏦</div>
+          <div class="product-info">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+              <h3 style="margin:0;">yVaults</h3>
+              <span class="badge badge-green">Live</span>
+              <span class="badge badge-blue">ERC-4626</span>
+            </div>
+            <p>yVaults are the flagship product of Yearn Finance — automated, yield-generating smart contracts that accept ERC-20 token deposits and deploy them across curated DeFi strategies. When you deposit into a yVault, you receive yvTokens representing your share of the vault's assets. These vault tokens auto-compound returns, meaning your balance grows over time without any manual harvesting. Each vault runs one or more strategies that interact with protocols like Aave, Compound, Curve, Convex, and Morpho to generate yield from lending, liquidity provision, and farming. The Vault Allocator contract dynamically distributes capital between strategies based on APY, risk parameters, and capacity limits, ensuring optimal allocation at all times.</p>
+            <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open App ↗</a>
+              <a href="https://docs.yearn.fi/getting-started/products/yvaults/overview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Documentation ↗</a>
+              <a href="vaults.html" class="btn btn-outline btn-sm">View All Vaults</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curation -->
+    <div id="curation" style="scroll-margin-top:90px;">
+      <div class="product-section">
+        <div class="product-section-title">Curation — Lending Market Curation</div>
+        <div class="product-card" style="margin-bottom:24px;">
+          <div class="product-icon">🎯</div>
+          <div class="product-info">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+              <h3 style="margin:0;">Curation</h3>
+              <span class="badge badge-blue">Lending</span>
+            </div>
+            <p>Yearn's Curation product focuses on intelligently allocating capital across lending markets to maximize risk-adjusted returns. Rather than deploying funds to a single lending protocol, Curated Vaults monitor dozens of lending markets simultaneously and rebalance between them as rates change. The curation system evaluates each market's interest rate, utilization ratio, asset quality, and protocol risk score to construct an optimal lending portfolio. Users benefit from institutional-grade capital allocation without needing to manage positions across multiple protocols. Curated Vaults are particularly effective for stablecoin deposits, where lending rates across platforms like Morpho, Aave, and Compound can vary significantly.</p>
+            <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <a href="https://app.yearn.fi/vaults" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open App ↗</a>
+              <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Liquid Lockers -->
+    <div id="liquid-lockers" style="scroll-margin-top:90px;">
+      <div class="product-section">
+        <div class="product-section-title">Liquid Lockers</div>
+        <div class="grid-2">
+          <!-- yCRV -->
+          <div id="ycrv" style="scroll-margin-top:90px;" class="product-card">
+            <div class="product-icon">🌊</div>
+            <div class="product-info">
+              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+                <h3 style="margin:0;">yCRV</h3>
+                <span class="badge badge-blue">veCRV Liquid Locker</span>
+              </div>
+              <p>yCRV is Yearn's liquid wrapper for CRV tokens. Instead of locking CRV for up to 4 years to obtain veCRV, users can deposit CRV into the yCRV contract to receive yCRV — a fully liquid, tradeable ERC-20 token. Yearn maintains one of the largest veCRV positions in the Curve ecosystem, using its voting power to direct CRV emissions toward Yearn's liquidity pools and boost yields for yCRV holders. yCRV holders earn Curve admin fees (3CRV distributions), boosted CRV rewards, and a share of Yearn's governance revenue. yCRV can be staked in st-yCRV for auto-compounding returns, or used as-is in external DeFi protocols.</p>
+              <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+                <a href="https://app.yearn.fi/ycrv" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open yCRV ↗</a>
+                <a href="https://docs.yearn.fi/getting-started/products/ycrv/overview" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Docs ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- yYB -->
+          <div id="yyb" style="scroll-margin-top:90px;" class="product-card">
+            <div class="product-icon">🔷</div>
+            <div class="product-info">
+              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+                <h3 style="margin:0;">yYB</h3>
+                <span class="badge badge-purple">veYB Liquid Locker</span>
+              </div>
+              <p>yYB follows the same model as yCRV, applied to the Yearn Blue (YB) token ecosystem. Holders of YB tokens can deposit them into yYB to receive a liquid representation of their locked position without the traditional lock-up period. Yearn manages a strategic veYB position, using governance votes to maximize rewards and protocol emissions for yYB participants. Holders earn veYB gauge rewards, platform fees distributed by the Yearn Blue protocol, and governance participation rights. yYB is designed to be fully composable with DeFi protocols that support ERC-20 tokens, enabling additional yield opportunities beyond the base protocol rewards.</p>
+              <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+                <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open App ↗</a>
+                <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Docs ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- stYFI -->
+    <div id="styfi" style="scroll-margin-top:90px;">
+      <div class="product-section">
+        <div class="product-section-title">YFI Staking</div>
+        <div class="product-card">
+          <div class="product-icon">💎</div>
+          <div class="product-info">
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">
+              <h3 style="margin:0;">stYFI — YFI Staking</h3>
+              <span class="badge badge-green">Live</span>
+              <span class="badge badge-blue">ERC-4626</span>
+            </div>
+            <p>stYFI is the auto-compounding ERC-4626 staking vault for Yearn's native governance token, YFI. By depositing YFI into the stYFI contract, holders earn a proportional share of Yearn's protocol revenue — fees collected from yVaults, liquid lockers, and other Yearn products are distributed to stYFI depositors. Unlike traditional staking mechanisms, stYFI implements the ERC-4626 standard, making it seamlessly composable with other DeFi protocols. Stakers can use stYFI as collateral in lending protocols, provide liquidity in DEXes, or deposit it into further yield strategies. Returns are auto-compounded, increasing the YFI value of each stYFI token over time. YFI's fixed supply of 36,666 tokens makes stYFI a high-conviction governance and yield token.</p>
+            <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <a href="https://app.yearn.fi/styfi" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Stake YFI ↗</a>
+              <a href="https://docs.yearn.fi/getting-started/products/yfi/staking" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Documentation ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS SECTION -->
+<section class="section" id="tools" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">🔧 Tools</span>
+      <h2>Developer &amp; Analytics<br/><span class="gradient-text">Tools</span></h2>
+      <p>A suite of open-source tools built by Yearn contributors to power the ecosystem's analytics, management, and vault creation workflows.</p>
+    </div>
+
+    <div class="grid-auto">
+      <!-- PowerGlove -->
+      <div id="powerglove" style="scroll-margin-top:90px;" class="product-card">
+        <div class="product-icon">📊</div>
+        <div class="product-info">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <h3 style="margin:0;">PowerGlove</h3>
+            <span class="badge badge-blue">Analytics</span>
+          </div>
+          <p>PowerGlove is Yearn's advanced vault analytics platform. It provides detailed performance breakdowns for every Yearn vault, including historical APY data, strategy allocations, harvest history, and fee analytics. Designed for power users and researchers who need granular insight into vault operations.</p>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:12px;">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- Kong -->
+      <div id="kong" style="scroll-margin-top:90px;" class="product-card">
+        <div class="product-icon">🗄️</div>
+        <div class="product-info">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <h3 style="margin:0;">Kong</h3>
+            <span class="badge badge-blue">Data API</span>
+          </div>
+          <p>Kong is Yearn's comprehensive vault data service. It indexes on-chain vault data and exposes it through a clean REST API, enabling developers to build applications using reliable, up-to-date Yearn data. Kong tracks TVL, APY, strategy performance, and historical yields for all Yearn vaults across every supported chain.</p>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:12px;">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- Kalani -->
+      <div id="kalani" style="scroll-margin-top:90px;" class="product-card">
+        <div class="product-icon">⚙️</div>
+        <div class="product-info">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <h3 style="margin:0;">Kalani</h3>
+            <span class="badge badge-purple">Management</span>
+          </div>
+          <p>Kalani is the Vault Management Interface used by Yearn strategists and vault managers to monitor, configure, and manage vault parameters. Through Kalani, authorized users can adjust strategy allocations, update debt ratios, harvest strategies, and respond to changing market conditions with precision and speed.</p>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:12px;">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- yFactory -->
+      <div id="yfactory" style="scroll-margin-top:90px;" class="product-card">
+        <div class="product-icon">🏭</div>
+        <div class="product-info">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <h3 style="margin:0;">yFactory</h3>
+            <span class="badge badge-green">Creation</span>
+          </div>
+          <p>yFactory is a permissionless LP token vault creation tool. Anyone can use yFactory to deploy a new ERC-4626 vault for any Curve, Balancer, or other LP token. Vaults created through yFactory inherit Yearn's battle-tested vault architecture, standard security properties, and can immediately benefit from Yearn's existing strategy ecosystem.</p>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:12px;">GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- APR Oracle -->
+      <div id="apr-oracle" style="scroll-margin-top:90px;" class="product-card">
+        <div class="product-icon">🔮</div>
+        <div class="product-info">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <h3 style="margin:0;">APR Oracle</h3>
+            <span class="badge badge-blue">Yield Tool</span>
+          </div>
+          <p>The APR Oracle is Yearn's on-chain projected vault APY tool. It calculates expected annual returns for Yearn vaults based on current strategy allocations, protocol rates, and emission schedules. The oracle is used internally by Yearn's infrastructure and is available for external protocols to query projected yields for any supported Yearn vault.</p>
+          <a href="https://github.com/yearn/yearn-APR-oracle" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="margin-top:12px;">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-section">
+      <span class="section-label">🚀 Get Started</span>
+      <h2>Explore the Full<br/>Yearn Ecosystem</h2>
+      <p>From depositing in a yVault to building your own strategy — the Yearn ecosystem is open to everyone.</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Launch App ↗</a>
+        <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">Read the Docs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="navbar-logo" style="display:inline-flex;"><div class="logo-icon">Y</div>Yearn</a>
+        <p>DeFi's premier yield optimization protocol. Earn the best risk-adjusted yields across the decentralized finance ecosystem.</p>
+        <div class="footer-socials" style="margin-top:20px;">
+          <a href="https://twitter.com/iearnfinance" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X / Twitter">𝕏</a>
+          <a href="https://discord.gg/6PNv2nF" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">💬</a>
+          <a href="https://t.me/yearnfinance" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Telegram">✈️</a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">🐙</a>
+          <a href="https://gov.yearn.fi" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Governance">🗳️</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Protocol</div>
+        <div class="footer-links">
+          <a href="https://app.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Launch App ↗</a>
+          <a href="vaults.html" class="footer-link">Vaults</a>
+          <a href="ecosystem.html" class="footer-link">Ecosystem</a>
+          <a href="features.html" class="footer-link">Features</a>
+          <a href="products.html" class="footer-link">Products</a>
+          <a href="services.html" class="footer-link">Services</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Resources</div>
+        <div class="footer-links">
+          <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Documentation ↗</a>
+          <a href="https://blog.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Blog ↗</a>
+          <a href="https://github.com/yearn" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub ↗</a>
+          <a href="https://gov.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Governance ↗</a>
+          <a href="resources.html" class="footer-link">All Resources</a>
+          <a href="expedition.html" class="footer-link">Expedition</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Community</div>
+        <div class="footer-links">
+          <a href="https://discord.gg/6PNv2nF" target="_blank" rel="noopener noreferrer" class="footer-link">Discord Support ↗</a>
+          <a href="https://t.me/yearnfinance" target="_blank" rel="noopener noreferrer" class="footer-link">Telegram ↗</a>
+          <a href="https://twitter.com/iearnfinance" target="_blank" rel="noopener noreferrer" class="footer-link">X (Twitter) ↗</a>
+          <a href="https://gov.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-link">Discourse Forum ↗</a>
+          <a href="contacts.html" class="footer-link">Contacts</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2024 Yearn Finance. All rights reserved.</div>
+      <div style="display:flex;gap:24px;">
+        <a href="https://docs.yearn.fi/resources/risks/protocol-risks" target="_blank" rel="noopener noreferrer" class="footer-bottom-text" style="color:var(--text-muted);">Risk Disclosure</a>
+        <a href="https://docs.yearn.fi" target="_blank" rel="noopener noreferrer" class="footer-bottom-text" style="color:var(--text-muted);">Docs</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
